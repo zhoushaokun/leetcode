@@ -22,21 +22,17 @@ var fourSum = function(nums_o, target) {
             twoSum.set([i, j], nums[i]+nums[j]);
             while (nums[j] === nums[++j]) { }
         }
-        // while (nums[i] === nums[++i]) { }
+        while (nums[i] === nums[++i]) { }
     }
     
     console.log('twoSum', twoSum);
     
     for (const [key, value] of twoSum) {
         for (const [key_s, value_s] of twoSum) {
-            console.log('[...key, ...key_s].sort().join(",")', [...key, ...key_s].sort().join(","));
             if(res.indexOf([...key, ...key_s].sort().join(",")) > -1) {
                 continue;
             }
             if(value + value_s === target && new Set([...key_s, ...key]).size === key.length + key_s.length) {
-                console.log('key', key);
-                console.log('key_s', key_s);
-                
                 res.push([...key, ...key_s].sort().join(","));
             }
         }
@@ -49,5 +45,6 @@ var fourSum = function(nums_o, target) {
         return [nums[item_a[0]], nums[item_a[1]], nums[item_a[2]], nums[item_a[3]]];
     });
 };
+
 // @lc code=end
 

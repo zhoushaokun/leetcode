@@ -30,6 +30,27 @@ var removeNthFromEnd = function(head, n) {
     if(len === n) return head.next;
     arr[len - n - 1].next = arr[len - n].next;
     return head;
+
+    // 两次遍历
+    // let p = head;
+    // let len = 0;
+    // while (p) {
+    //     p = p.next;
+    //     len++;
+    // }
+    // if(n === len) return head.next;
+
+    // p = head;
+
+    // for (let i = 0; i < len; i++) {
+    //     if(len - n === i + 1) {
+    //         p.next = p.next.next;
+    //         break;
+    //     }
+    //     p = p.next;
+    // }
+
+    // return head;
 };
 // @lc code=end
 
