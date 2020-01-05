@@ -19,15 +19,16 @@
 var isValid = function(s) {
     const sArr = s.split("");
     if (sArr.length%2 !== 0) return false;
-    let stack = [sArr[0]];
+    let stack = [];
     for (let i = 0; i < sArr.length; i++) {
         const c = sArr[i];
-        if(map[c] === stack[stack.length-1]) {
+        if(c === '(' || c === '[' || c === '{') { //入栈
+            stack.push(c);
+        } else if (map[c] === stack[stack.length - 1]) {
             stack.pop();
         } else {
-            stack.push(c);
+            return false;
         }
-        console.log('stack', stack)
     }
     return stack.length === 0;
 };
