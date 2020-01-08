@@ -10,21 +10,21 @@
  * @return {string}
  */
 var simplifyPath = function(path) {
-  const path_arr = Array.from(new Set(path.split('/')))
-  let stack = [];
-  
+  const path_arr = path.split('/').filter(item => !!item);
+  if(path_arr.length === 0) return '/';
+  let stack = [];  
   for (let i = 0; i < path_arr.length; i++) {
-    if(path_arr[i] === '.' && path_arr[i+1] === '.'){
-      i++;
+    if(path_arr[i] === '..'){
       stack.pop();
-    } else if (path[i] === '.' && path[i+1] !== '.') {
+    } else if (path_arr[i] === '.') {
       continue;
     } else {
       stack.push(path_arr[i]);
     }
+   
   }
-
-  return stack.join('/');
+  return '/'+(stack.join('/'));
 };
+
 // @lc code=end
 
