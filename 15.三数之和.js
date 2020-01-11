@@ -17,7 +17,7 @@
         nums.sort();
 
         for (let i = 0; i < nums.length; ) {
-            console.log('i', i)
+            console.log('iz', iz)
             let first = i+1;
             let last = nums[nums.length-1];
 
