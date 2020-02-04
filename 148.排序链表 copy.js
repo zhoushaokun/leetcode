@@ -22,7 +22,7 @@ var sortList = function(head) {
     let headPre = {
         next: head,
         val: Math.min,
-    }; 
+    };
 
     let pre = headPre;
     let len = 1;
@@ -39,7 +39,6 @@ var sortList = function(head) {
 
 // 两个链表 p1 p2 按从小到大重新链接
 function sortSubList(preNode, len) {
-    const head = preNode;
     let p1 = preNode.next;
     let p2 = preNode.next;
     // 长度不够 len，直接返回，不用合并
