@@ -5,8 +5,10 @@
     example: [3, 42, 5, 23, 6, 10];
  */
 const example = [3, 20, 42, 5, 23, 6, 10];
-const res = fn(example);
-console.log('res', res);
+const res = quickSortRecurse(example);
+console.log('递归res', res);
+const res = quickSortStack(example);
+console.log('非递归res', res);
 
 // function quickSort(arr) {
 //     const len = arr.length;
@@ -127,7 +129,7 @@ function Pair(first, second) {
 }
 
 // 使用迭代和栈实现的快速排序
-function quickStackSort(arr) {
+function quickSortStack(arr) {
     const example = [...arr];
     let stack = [];
     stack.push(new Pair(0, example.length-1));

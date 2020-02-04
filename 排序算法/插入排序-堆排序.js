@@ -30,7 +30,7 @@ function heapSort(arr) {
     return arr;
 }
 
-function adjustDown(example, parent, length) {
+function adjustDown(arr, parent, length) {
     let child = (parent<<1)+1;
     let temp = 0;
     while (child < length) {
