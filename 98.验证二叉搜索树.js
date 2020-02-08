@@ -21,7 +21,7 @@ var isValidBST = function(root) {
     if(!root) return true;
     // 先序遍历
     const stack = [];
-    let inorder = Math.max;
+    let inorder = Math.max();
     let p = root;
     while (stack.length || p) {
         while(p) {
