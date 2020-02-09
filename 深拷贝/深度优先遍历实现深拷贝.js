@@ -1,8 +1,8 @@
 /* 
     关键：
     (1)判断数据类型的神奇方法：Object.prototype.toString.call(item).slice(8, -1);
-    (2)解决环状引用
-    (3)解决属性值是函数
+    (2) visitedArr 解决环状引用
+    (3)eval 解决属性值是函数
 */
 let _toString = Object.prototype.toString;
 let map = {
