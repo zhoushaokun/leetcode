@@ -26,7 +26,7 @@ const DFSCopy = (obj, visitedArr) => {
     if(isType(obj, 'array') || isType(obj, 'Object')) {
         let index = visitedArr.indexOf(obj);
         _obj = isType(obj, 'array') ? [] : {};
-        if(index>=0) {
+        if(index >= 0) {
             _obj = visitedArr[index];
         } else {
             visitedArr.push(obj);
