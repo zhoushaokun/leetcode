@@ -67,9 +67,7 @@ console.log('非递归res', res);
 // 使用递归做的快速排序
 function quickSortRecurse(arr) {
     const len = arr.length;
-    if (!len || len === 1) return {
-        arr,
-    };
+    if (!len || len === 1) return arr;
     let base = arr[0];
     // let temp = 0;
 
@@ -87,7 +85,7 @@ function quickSortRecurse(arr) {
     }
     arr[i] = base;
 
-    return [...quickSort.slice(0, i), arr[i], ...quickSort(i+1)];
+    return [...quickSort(arr.slice(0, i)), arr[i], ...quickSort(arr.slice(i+1))];
 }
 
 /* 
