@@ -5,7 +5,7 @@
  */
 
 // @lc code=start
-/**
+/** 
  * @param {string} 
  * @return {number}
  */
