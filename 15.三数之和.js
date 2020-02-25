@@ -12,28 +12,38 @@
 /*
     a + b = -c
 */
-    var threeSum = function(nums) {
-        let result = [];
-        nums.sort();
+var threeSum = function(nums) {
+    const result = [];
+    const len = nums.length;
+    let first = 0,
+        last = 0,
+        sum3 = 0;
+    nums.sort((a, b) => a - b);
 
-        for (let i = 0; i < nums.length; ) {
-            console.log('iz', iz)
-            let first = i+1;
-            let last = nums[nums.length-1];
-
-            let sum3 = nums[first] + nums[last] + nums[i];
+    for (let i = 0; i < len - 1; i ++) {
+        if(nums[i] > 0) break;
+        if(i > 0 && nums[i] === nums[i - 1]) continue;
+        first = i + 1;
+        last = len - 1;
+        while(first < last) {
+            sum3 = nums[first] + nums[last] + nums[i];
             if (sum3 === 0) {
-                result.push([nums[first], nums[i], nums[last]]);
+                result.push([nums[i], nums[first], nums[last]]);
             }
-            if(nums <= 0) { //数小1，fist向右
-                while(first< last && nums[++fist]) {}
+            if (sum3 <= 0) { //数小，fist向右
+                while (first < last && nums[first] === nums[first + 1]) {
+                    first ++;
+                }
+                first ++;
             } else {
-                while(first < last && nums[--last]) {}
+                while (first < last && nums[last] === nums[last - 1]) {
+                    last --;
+                }
+                last --;
             }
-            while(nums[i] === nums[++i]){}
         }
-        
-        return result;
-    };
+    }
+    return result;
+};
 // @lc code=end
 
