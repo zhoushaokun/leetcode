@@ -17,25 +17,19 @@
  * @return {boolean}
  */
 var isBalanced = function(root) {
-    /* 
-        迭代方法：求取子树长度同时，判断子树是否符合平衡二叉树
-
-     */
     const ret = isNodeBalanced(root);
     if(ret >= 0) return true;
     return false;
 };
 function isNodeBalanced(node) {
     if(!node) return 0;
-    let left = isNodeBalanced(node.left);
-    let right = isNodeBalanced(node.right);
-    if(left < 0 || right < 0) return -1;
-    left ++;
-    right ++;
-    if(Math.abs(left-right) > 1) {
+    const left = isNodeBalanced(node.left);
+    const right = isNodeBalanced(node.right);
+    if(left < 0 || right < 0) return -1; //短路机制，有一个子树不满足条件就直接返回
+    if(Math.abs(left - right) > 1) { //子树高度差多于1，就返回-1
         return -1;
     } else {
-        return Math.max(left, right);
+        return Math.max(left, right) + 1;
     }
 }
 // @lc code=end

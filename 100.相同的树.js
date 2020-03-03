@@ -36,7 +36,6 @@ var isSameTree = function(p, q) {
         p = p.right;
         q = q.right;
     }
-    console.log('p, q', p, q)
     if(stack_p.length !== stack_q.length) return false;
     if(!p && q) return false;
     if(p && !q) return false;
