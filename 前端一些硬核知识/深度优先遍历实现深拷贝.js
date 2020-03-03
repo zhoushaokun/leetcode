@@ -31,7 +31,7 @@ const DFSCopy = (obj, visitedArr) => {
         } else {
             visitedArr.push(obj);
             for (let item in obj) {
-                    _obj[item] = DFSCopy(obj[item], visitedArr);                    
+                 _obj[item] = DFSCopy(obj[item], visitedArr);                    
             }
         }
     } else if (isType(obj, 'function')) { //当为函数

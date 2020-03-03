@@ -36,7 +36,7 @@ function adjustDown(arr, parent, length) {
     while (child < length) {
         // 巧妙之处：child+1<length 不仅适用构造堆，而且适用后边输出
         if (child + 1 < length && arr[child + 1] < arr[child]) { //找到最小的子元素
-            child++;
+            child ++;
         }
         if (arr[child] >= arr[parent]) { //如果最小的子元素满足小堆顶
             break;

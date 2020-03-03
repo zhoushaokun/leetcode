@@ -10,7 +10,14 @@
  * @return {number[]}
  */
 var findDuplicates = function(nums) {
-    
+    /* 
+        nums[i] 应该在第 i 个上（index = i-1），
+        如果有第 j 
+    */
+    const len = nums.length;
+    for (let i = 0; i < len; i++) {
+
+    }
 };
 // @lc code=end
 
