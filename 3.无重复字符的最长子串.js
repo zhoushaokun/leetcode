@@ -40,7 +40,8 @@ var lengthOfLongestSubstring = function(s) {
         new 一个长 128 且全是-1的数组 hashTable
         for end++;
             if end > hashTable[s.charCodeAt(end)], 
-                start = start+hashTable[s.charCodeAt(end)] +1
+                if  大于 start 
+                    start = start+hashTable[s.charCodeAt(end)] +1
                 end标记进去，        
     */
     const hashTable = new Array(128).fill(-1);
