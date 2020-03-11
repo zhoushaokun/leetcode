@@ -36,6 +36,8 @@ const DFSCopy = (obj, visitedArr) => {
         }
     } else if (isType(obj, 'function')) { //当为函数
         _obj = eval(`(${obj.toString})`);
+    }else if (isType(obj, 'RegExp')) {
+        _obj = new RegExp(obj);
     } else {
         _obj = obj;
     }
