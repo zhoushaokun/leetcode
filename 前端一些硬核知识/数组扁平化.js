@@ -19,6 +19,19 @@ function flatternReduce(arr) {
     }, []);
 }
 
+function flatterReduceV1(arr) {
+    const stack = [];
+    const res = [];
+    for (let i = 0; i < arr.length; i++) {
+        if(judgeIfArray(arr[i])) { // 如果是数组，
+
+        }
+        while(stack.length) {
+
+        } 
+    }
+}
+
 // toString & split 方法
 function flatternToString(arr) {
     return arr.toString().split(',').map( (item) => {
