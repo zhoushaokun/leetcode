@@ -24,23 +24,7 @@ function List() {
     this.createdTopicsNum = 0;
     this.editTopic = {};
 
-    // 方便在回调中使用刷新列表
-    var updateShowList = function (that) {
-        return function () {
-            that.pullTopicsList($scope.searchContent.trim(), function () {
-                $scope.singleList.cacheList = [];
-            });
-        };
-    }(this);
-
-    var getIconClass = function (creator, normalClass, noAuthClass) {
-        if (moduleConst.account.accountType !== "ADMIN") { //不是管理员
-            if (!creator) return noAuthClass;
-            var creatorId = creator.id;
-            if (creatorId !== moduleConst.account.id) return noAuthClass;  //不是自己创建的专题
-        }
-        return normalClass;
-    };
+ 
 
     List.prototype.init = function (accountData) {
         this.createdTopicsNum = accountData.createdTopicNum;

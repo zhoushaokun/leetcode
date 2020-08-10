@@ -22,11 +22,7 @@ function insertSort(example) {
             if(arr[i]<arr[j]){
                 [insertElement] = arr.splice(i,1);
                 console.log('insertElement', insertElement);
-                if(j === 0) {
-                    arr.unshift(insertElement);
-                } else {
-                    arr.splice(j, 0, insertElement);
-                }
+                arr.splice(j, 0, insertElement);
             }
         }
     }
