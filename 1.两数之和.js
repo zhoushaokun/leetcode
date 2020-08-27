@@ -27,3 +27,25 @@ var twoSum = function(nums, target) {
 };
 // @lc code=end
 
+
+function getIntersection(...spans) {
+    /* 代码实现 */
+    return spans.reduce((lastResult, span) => {
+        return getSame(lastResult, span);
+    });
+
+    function getSame(spanA, spanB) {
+        if (spanA === null || spanB === null) return null;
+        spanA.sort((a, b) => a - b);
+        spanB.sort((a, b) => a - b);
+        if (Math.min(...spanA) > Math.max(...spanB) || Math.min(...spanB) > Math.max(...spanA)) {
+            return null;
+        }
+        const end = Math.min(spanA[1], spanB[1]);
+        const start = Math.max(spanA[0], spanB[0]);
+        return [start, end];
+    }
+}
+
+const res = getIntersection([5, 2], [4, 9], [3, 6]);
+console.log('res', res)
