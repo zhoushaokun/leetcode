@@ -10,7 +10,9 @@
  * @return {string[]}
  */
 var readBinaryWatch = function(num) {
-
+  // 递归处理
+  
+  
 };
 // @lc code=end
 
