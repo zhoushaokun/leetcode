@@ -52,12 +52,10 @@ var lengthOfLongestSubstring = function(s) {
         charCode = 0;
     for ( ; end < len; end ++) {
         charCode = s.charCodeAt(end);
-        if(end > hashTable[charCode]) {
-            if(start < hashTable[charCode] + 1) {
-                start = hashTable[charCode] + 1;
-            }
-            hashTable[charCode] = end;
+        if(start < hashTable[charCode] + 1) {
+            start = hashTable[charCode] + 1;
         }
+        hashTable[charCode] = end;
         maxLen = Math.max(maxLen, end - start + 1);
     }
     return maxLen;
